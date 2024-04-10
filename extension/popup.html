@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+  <div id="container">
+    <div class="header">
+        <a href="https://topgptdirectory.com/" target="_blank"><img src="icon128.png" alt="GPT Directory" /></a>
+        <input type="text" id="searchInput" placeholder="Search for a GPT in your list!">
+        <button id="saveToCsvButton">ADD GPT</button>
+    </div>
+    <table id="gptTable">
+      <tbody id="gptTableBody">
+        <!-- Table data will be populated here -->
+      </tbody>
+    </table>
+    <button id="sortButton">Sort Alphabetically</button>
+    <button id="importButton">Import</button>
+    <button id="exportButton">Export</button>
+    <button id="deleteAllButton">Delete All</button>
+    <hr />
+    <input type="file" id="csvFileInput" accept=".csv" />
+  </div>
+  <script src="papaparse.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

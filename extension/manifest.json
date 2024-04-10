@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Library Navigator",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["papaparse.min.js", "content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["papaparse.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

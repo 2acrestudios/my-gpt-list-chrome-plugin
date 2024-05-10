@@ -1,5 +1,6 @@
 # MY GPT LIST
 
+<img src="https://2acrestudios.com/wp-content/uploads/2024/05/00024-377158633.png" align="right" style="width: 300px;" />
 My GPT List is a Chrome extension designed to manage and interact with a library of GPTs at OpenAI. It allows users to import, export, and manipulate data regarding different custom GPTs stored as CSV files. This extension is ideal for researchers, developers, and enthusiasts interested in exploring different GPT configurations and their capabilities or just keeping your favorites close on hand.
 
 ## Features
@@ -13,7 +14,7 @@ My GPT List is a Chrome extension designed to manage and interact with a library
 ## Installation
 
 To install the GPT Library Navigator, follow these steps:
-
+<img src="https://2acrestudios.com/wp-content/uploads/2024/05/00026-377158635.png" align="right" style="width: 300px;" />
 1. **Download the Extension:** Clone this repository or download the ZIP file and extract it.
 2. **Open Chrome Extensions Page:** Navigate to `chrome://extensions/` in your Google Chrome browser.
 3. **Enable Developer Mode:** At the top right of the extensions page, toggle the "Developer mode" switch to the 'On' position.
@@ -47,7 +48,7 @@ The CSV files used for import and export should adhere to the following column s
 - `url`: URL to more details or the source of the GPT model.
 
 ## Contributing
-
+<img src="https://2acrestudios.com/wp-content/uploads/2024/05/00027-377158636.png" align="right" style="width: 300px;" />
 Interested in contributing? Great! You can follow these steps to submit your contributions:
 1. Fork the repository.
 2. Create your feature branch (`git checkout -b feature/fooBar`).

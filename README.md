@@ -1,5 +1,5 @@
-# gpt-plugin
-This Chrome plugin helps you maintain a list of OpenAI custom ChatGPTs.
-
-# website
-https://topgptdirectory.com/
+      <pre>
+_  _ _   _    ____ ___  ___    _    _ ____ ___
+|\/|  \_/     | __ |__]  |     |    | [__   | 
+|  |   |      |__] |     |     |___ | ___]  | 
+      </pre>

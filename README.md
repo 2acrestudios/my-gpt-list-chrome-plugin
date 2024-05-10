@@ -62,3 +62,4 @@ Interested in contributing? Great! You can follow these steps to submit your con
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+<img src="https://2acrestudios.com/wp-content/uploads/2024/05/Screenshot-2024-05-10-at-5.16.02 PM.png" />

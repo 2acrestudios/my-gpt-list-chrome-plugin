@@ -153,12 +153,14 @@ function exportToCsv() {
     });
 }
 
-// Display combined data in the table
+// Display combined data in the table, always sorted alphabetically by 'gptName'
 function displayCombinedData(combinedDataList) {
+    // Sort combinedDataList alphabetically by 'gptName' each time before displaying
+    combinedDataList.sort((a, b) => a.gptName.localeCompare(b.gptName));
+
     const tableBody = document.getElementById('gptTableBody');
     tableBody.innerHTML = ''; // Clear the table body before loading
     combinedDataList.forEach((data) => {
-        // Check if the data object has the properties you're trying to access
         if (data.hasOwnProperty('url') && data.hasOwnProperty('gptName') && data.hasOwnProperty('description')) {
             const row = tableBody.insertRow();
             const nameCell = row.insertCell(0);
@@ -166,19 +168,18 @@ function displayCombinedData(combinedDataList) {
             const deleteCell = row.insertCell(2); // Cell for delete button
 
             const nameLink = document.createElement('a');
-            nameLink.href = data.url; // Use the camelCase property name
-            nameLink.textContent = data.gptName; // Use the camelCase property name
+            nameLink.href = data.url; // Link to GPT source
+            nameLink.textContent = data.gptName; // Display the GPT name
             nameLink.target = '_blank';
             nameCell.appendChild(nameLink);
 
-            descCell.textContent = data.description; // Use the camelCase property name
+            descCell.textContent = data.description; // Display the GPT description
 
             const deleteBtn = document.createElement('button');
             deleteBtn.textContent = 'X';
             deleteBtn.onclick = function() { deleteRow(data.url, combinedDataList); };
             deleteCell.appendChild(deleteBtn);
         } else {
-            // Log the data object for debugging purposes
             console.error('Data object is missing required properties:', JSON.stringify(data));
         }
     });

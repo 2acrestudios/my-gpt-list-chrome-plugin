@@ -1,15 +1,22 @@
 body {
-    width: 600px;
+    width: 700px;
     padding: 10px;
     background-color: rgb(0, 0, 0);
     color: #ddd;
 }
+pre {
+    font-family: Courier, monospace; /* Ensures the ASCII art aligns correctly */
+    white-space: pre-wrap; /* Wraps text */
+    word-wrap: break-word; /* Allows long lines to break and wrap to the next line */
+    padding: 1px; /* Adds padding around the text */
+    color:goldenrod;
+}
 a {
-    color: greenyellow;
+    color: rgb(5, 141, 209);
     text-decoration: none;
 }
 a:hover {
-    color: rgb(132, 6, 167);
+    color: rgb(236, 114, 114);
     text-decoration: none;
 }
 table {
@@ -45,7 +52,7 @@ th {
 #saveToCsvButton {
     margin-top: 0px;
     float: right;
-    background-color: #5b0083;
+    background-color: #2f00c8;
     color: #ddd;
     border: #5a5959 1px solid;
     border-radius: 3px;
@@ -54,7 +61,7 @@ th {
 #saveToCsvButton:hover {
     margin-top: 0px;
     float: right;
-    background-color: #484848;
+    background-color: #f330d9;
     color: #ddd;
     border: #5a5959 1px solid;
     border-radius: 3px;

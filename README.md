@@ -42,14 +42,15 @@ To install the GPT Library Navigator, follow these steps:
 
 ## Structure of CSV Files
 
+<img src="https://2acrestudios.com/wp-content/uploads/2024/05/00027-377158636.png" align="right" style="width: 300px;" />
 The CSV files used for import and export should adhere to the following column structure:
 - `gptName`: The name of the GPT model.
 - `description`: A brief description of the model.
 - `url`: URL to more details or the source of the GPT model.
 
 ## Contributing
-<img src="https://2acrestudios.com/wp-content/uploads/2024/05/00027-377158636.png" align="right" style="width: 300px;" />
 Interested in contributing? Great! You can follow these steps to submit your contributions:
+
 1. Fork the repository.
 2. Create your feature branch (`git checkout -b feature/fooBar`).
 3. Commit your changes (`git commit -am 'Add some fooBar'`).

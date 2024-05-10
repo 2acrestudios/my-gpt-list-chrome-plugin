@@ -1,7 +1,3 @@
-      ```
-      <pre>
-_  _ _   _    ____ ___  ___    _    _ ____ ___
-|\/|  \_/     | __ |__]  |     |    | [__   | 
-|  |   |      |__] |     |     |___ | ___]  | 
-      </pre>      
-      ```
+# MY GPT LIST
+
+This is a Chrome browser plugin that allows you to save a list of your favorite custom ChatGPTs.

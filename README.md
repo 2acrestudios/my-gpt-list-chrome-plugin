@@ -48,15 +48,6 @@ The CSV files used for import and export should adhere to the following column s
 - `description`: A brief description of the model.
 - `url`: URL to more details or the source of the GPT model.
 
-## Contributing
-Interested in contributing? Great! You can follow these steps to submit your contributions:
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/fooBar`).
-3. Commit your changes (`git commit -am 'Add some fooBar'`).
-4. Push to the branch (`git push origin feature/fooBar`).
-5. Create a new Pull Request.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

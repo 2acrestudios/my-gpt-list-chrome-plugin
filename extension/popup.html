@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="popup.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <title>My GPT List</title>
+    <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 <body>
-  <div id="container">
-    <div class="header">
-      <pre>
-_  _ _   _    ____ ___  ___    _    _ ____ ___
-|\/|  \_/     | __ |__]  |     |    | [__   | 
-|  |   |      |__] |     |     |___ | ___]  | 
-      </pre>
-        <div style="float:left;"><input type="text" id="searchInput" placeholder="Search for a GPT in your list!"></div>
-        <div style="float:right; padding-right:0px; padding-bottom: 6px; color:#CCC; font-size: 8px; vertical-align: middle;"><button id="saveToCsvButton"><i class="fa-solid fa-plus"></i></button></div>
+    <div id="container">
+        <div class="header">
+            <pre>
+    _  _ _   _    ____ ___  ___    _    _ ____ ___
+    |\/|  \_/     | __ |__]  |     |    | [__   | 
+    |  |   |      |__] |     |     |___ | ___]  | 
+            </pre>
+        </div>
+
+        <div id="statusMessage" class="status-message"></div>
+
+        <button id="saveToCsvButton">&#10010;</button>
+        <input type="text" id="searchInput" placeholder="Search GPTs...">
+
+        <table id="gptTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="gptTableBody"></tbody>
+        </table>
+
+        <div class="bottom-buttons">
+            <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+            <button id="importButton">Import</button>
+            <button id="exportButton">Export</button>
+            <button id="deleteAllButton">Delete All</button>
+        </div>
+
+        <div style="float:right; padding-top: 10px;">
+            <a href="https://github.com/2acrestudios/gpt-plugin" target="_blank">Built by 2 Acre Studios</a>
+        </div>
     </div>
-    <table id="gptTable">
-      <tbody id="gptTableBody">
-        <!-- Table data will be populated here -->
-      </tbody>
-    </table>
-    <div style="visibility: hidden;"><button id="sortButton"></button></div>
-    <button id="importButton">Import</button>
-    <button id="exportButton">Export</button>
-    <button id="deleteAllButton">Delete All</button>
-    <hr />
-    <div style="float:left; padding-bottom: 6px;"><input type="file" id="csvFileInput" accept=".csv" /></div>
-    <div style="float:right;"><a href="https://github.com/2acrestudios/gpt-plugin">Built by 2 Acre Studios</a></div>
-  </div>
-  
-  <script src="papaparse.min.js"></script>
-  <script src="popup.js"></script>
+
+    <script src="papaparse.min.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>

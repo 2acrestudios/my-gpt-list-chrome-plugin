@@ -1,31 +1,57 @@
 // content.js
 
-// Listener for messages from the popup or background script
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'scrapeGptData') {
-        // Logic to scrape GPT data from the current page
-        const gptName = document.querySelector('.text-center.text-2xl.font-medium')?.innerText || 'Default GPT Name';
-        const description = document.querySelector('.max-w-md.text-center.text-sm.font-normal.text-token-text-primary')?.innerText || 'Default Description';
-        const url = window.location.href;
-        sendResponse({ gptName, description, url });
-    } else if (request.action === 'processCSVDataInContent') {
-        // Logic to process CSV data in the content script, if needed
-        processCSVData(request.data);
-        sendResponse({ status: 'CSV data processed in content script' });
+        console.log('Received scrape request');
+        scrapeGptData().then(data => {
+            console.log('Scraped data:', data);
+            sendResponse({success: true, data: data});
+        }).catch(error => {
+            console.error('Error scraping data:', error);
+            sendResponse({success: false, error: error.message});
+        });
+        return true; // Indicates we will send a response asynchronously
     }
-    return true; // Keep the messaging channel open for asynchronous response
 });
 
-// Function to process CSV data within the content script
-function processCSVData(csvData) {
-    // TODO: Implement the logic to process CSV data within the content script
-    // This function can manipulate the DOM based on the CSV data or perform other tasks
-    console.log('CSV data received in content script:', csvData);
+async function scrapeGptData() {
+    try {
+        await waitForElement('.text-2xl.font-semibold');
+        
+        const gptName = document.querySelector('.text-2xl.font-semibold')?.innerText.trim() || '';
+        const description = document.querySelector('.text-sm.font-normal.text-token-text-primary')?.innerText.trim() || '';
+        const url = window.location.href;
+
+        if (!gptName) throw new Error('Could not find GPT name');
+        if (!description) throw new Error('Could not find GPT description');
+
+        console.log('Scraped GPT Name:', gptName);
+        console.log('Scraped Description:', description);
+        console.log('Scraped URL:', url);
+
+        return { gptName, description, url };
+    } catch (error) {
+        console.error('Error in scrapeGptData:', error);
+        throw error;
+    }
 }
 
-// Helper function to send data to the background script (if needed)
-function sendDataToBackground(data) {
-    chrome.runtime.sendMessage({ action: 'processDataInBackground', data: data });
-}
+function waitForElement(selector) {
+    return new Promise((resolve) => {
+        if (document.querySelector(selector)) {
+            return resolve();
+        }
 
-// Add other necessary functions or logic for your content script
+        const observer = new MutationObserver(() => {
+            if (document.querySelector(selector)) {
+                resolve();
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+}
